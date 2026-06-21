@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #faf8f5;
+            color: #2c3e4f;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-wrap {
+            max-width: 820px;
+            width: 100%;
+            margin: 2.4rem auto 3rem;
+        }
+        /* hero 区域 – 柔和引言 */
+        .hero-section {
+            margin-bottom: 3rem;
+            padding: 1.8rem 0 1.6rem;
+            border-bottom: 1px solid #e7e1d8;
+        }
+        .hero-section h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #1e2b39;
+            margin-bottom: 0.75rem;
+        }
+        .hero-section .subhead {
+            font-size: 1.08rem;
+            color: #556b7c;
+            max-width: 90%;
+            background: #ece7e0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 0.2rem;
+        }
+        /* 主内容排版 */
+        .content-block {
+            background: rgba(255, 255, 245, 0.6);
+            padding: 2.2rem 2.2rem 2.6rem;
+            border-radius: 28px;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(2px);
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 2.2rem;
+            margin-bottom: 0.9rem;
+            padding-left: 0.3rem;
+            border-left: 5px solid #7a8b9b;
+            padding-left: 1rem;
+            color: #1f2d3a;
+        }
+        .section-title:first-of-type {
+            margin-top: 0.3rem;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.03rem;
+        }
+        a {
+            color: #2e5f7a;
+            text-decoration: none;
+            border-bottom: 1px dotted #bccbd6;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #1b425a;
+            border-bottom: 1px solid #1b425a;
+        }
+        /* 卡片风格亮点 */
+        .highlights-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+        .highlight-card {
+            background: #f2efe9;
+            border-radius: 24px;
+            padding: 1.3rem 1.6rem;
+            flex: 1 1 180px;
+            min-width: 150px;
+            box-shadow: inset 0 0 0 1px #ebdfd2;
+        }
+        .highlight-card .card-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6e7f8b;
+            margin-bottom: 0.4rem;
+            font-weight: 400;
+        }
+        .highlight-card .card-value {
+            font-size: 1.3rem;
+            font-weight: 450;
+            color: #1a2e3b;
+        }
+        .highlight-card p {
+            margin: 0.4rem 0 0;
+            font-size: 0.98rem;
+            color: #3e5566;
+        }
+        /* 引用块 / 提示框 */
+        .callout-box {
+            background: #e7eae6;
+            border-left: 6px solid #839aaa;
+            padding: 1.4rem 1.8rem;
+            border-radius: 16px;
+            margin: 1.8rem 0 1.2rem;
+            font-size: 1rem;
+            color: #21323f;
+        }
+        .callout-box strong {
+            font-weight: 550;
+            color: #1a3142;
+        }
+        .faq-mini {
+            background: #f6f3ed;
+            border-radius: 20px;
+            padding: 0.8rem 1.6rem 0.4rem;
+            margin: 1.6rem 0 0.2rem;
+        }
+        .faq-item {
+            margin: 0.7rem 0;
+        }
+        .faq-item strong {
+            display: inline-block;
+            font-weight: 550;
+            color: #244256;
+        }
+        .faq-item p {
+            margin: 0.2rem 0 0.6rem 1rem;
+            font-size: 0.98rem;
+        }
+        /* 底部 */
+        .footnote {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #6c7e8b;
+            border-top: 1px solid #ddd9d1;
+            padding-top: 1.8rem;
+        }
+        .footnote a {
+            color: #436475;
+            border-bottom: 1px solid #9eb1bd;
+        }
+        /* 响应式 */
+        @media (max-width: 540px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .content-block {
+                padding: 1.5rem 1rem;
+            }
+            .highlights-grid {
+                flex-direction: column;
+            }
+            .highlight-card {
+                min-width: unset;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+        @media (min-width: 820px) {
+            body {
+                padding: 0 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <div class="hero-section">
+        <h1>爱游戏 · 一起探索游戏的脉络</h1>
+        <div class="subhead">产品说明 · 体验思路 · 日常使用</div>
+    </div>
+
+    <div class="content-block">
+        <!-- 摘要 -->
+        <div class="section-title">从内容到体验</div>
+        <p>
+            游戏不只是一种娱乐，更承载着叙事、策略与社群。  
+            <a href="https://indexm-i-game.com.cn">爱游戏</a> 以聚合信息与工具的方式，帮助玩家和爱好者更从容地梳理游戏内容、发现同类作品或回顾经典。
+            我们希望这个页面能提供一份清晰的功能说明，不渲染焦虑，不夸大效果，
+            只呈现那些你真正可以使用的场景与思路。
+        </p>
+
+        <!-- 亮点 – 卡片 -->
+        <div class="section-title">几个实用方向</div>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="card-label">整理</div>
+                <div class="card-value">作品笔记</div>
+                <p>记录游戏进度与心得，建立属于自己的游玩档案。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="card-label">发现</div>
+                <div class="card-value">关联推荐</div>
+                <p>基于类型、机制或主题，找到气质相近的作品。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="card-label">参考</div>
+                <div class="card-value">信息速览</div>
+                <p>查看简介、评分与社区摘要，辅助决策是否尝试。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 -->
+        <div class="section-title">使用建议：从常见场景出发</div>
+        <p>
+            如果你正在玩一款新游戏，可以通过平台标记当前状态、随手写下短评；
+            如果刚通关一部作品，可以利用标签和列表整理感受，方便日后回顾。
+            对于寻找下一款游戏的情况，浏览分类或查看与你口味相近的玩家推荐，往往比泛泛的排行榜更有参考价值。
+        </p>
+        <p>
+            不必把这里当作唯一的工具——它更像一本可以随时翻阅的游戏手账，
+            同时提供一些轻量的社交线索 (比如谁和你玩了同一款游戏)。
+            所有功能都以协助而非支配为原则。
+        </p>
+
+        <!-- 引用 / 提示框 (信任但克制) -->
+        <div class="callout-box">
+            <strong>一个提醒</strong> · 游戏库与社区内容来自用户与公开数据，可能存在延迟或偏差。
+            购买前建议通过 <a href="https://indexm-i-game.com.cn">爱游戏</a> 里的链接跳转到官方商店或评测页面进一步确认。
+            我们不收集敏感个人信息，也从不模拟、诱导消费或宣称「必玩」。
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="section-title">常见想法 · 简要回答</div>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <strong>需要注册才能浏览吗？</strong>
+                <p>大部分内容（游戏信息、评分、分类）无需登录即可查看。记录与社交功能需要创建基础账号。</p>
+            </div>
+            <div class="faq-item">
+                <strong>是否有手机版？</strong>
+                <p>页面适配移动端，浏览器直接使用；目前没有独立 App，但响应式设计在手机上也能顺畅操作。</p>
+            </div>
+            <div class="faq-item">
+                <strong>数据可以导出吗？</strong>
+                <p>支持导出个人的游戏笔记与收藏列表 (JSON / CSV)，方便备份或迁移至其他平台。</p>
+            </div>
+            <div class="faq-item" style="border:none; margin-bottom:0.2rem;">
+                <strong>收费吗？</strong>
+                <p>基础功能完全免费。未来可能增加可选的增值服务 (如高级统计数据)，但不会影响现有体验。</p>
+            </div>
+        </div>
+
+        <!-- 结尾与链接 -->
+        <div style="margin-top: 2rem;">
+            <p>
+                我们始终相信，好的工具应该安静地待在后台，在你需要的时候提供信息，而不是抢夺注意力。
+                如果你正在寻找一个没有算法围猎的游戏角落，
+                不妨从 <a href="https://indexm-i-game.com.cn">爱游戏</a> 开始，
+                慢慢整理自己的游戏故事。
+            </p>
+        </div>
+    </div>
+
+    <div class="footnote">
+        <p>一个认真整理过的说明页 · 关于游戏，也关于选择</p>
+        <p style="font-size:0.88rem; margin-top:0.3rem;">内容仅供参考，实际功能以 <a href="https://indexm-i-game.com.cn">爱游戏</a> 页面为准</p>
+    </div>
+</div>
+</body>
+</html>
