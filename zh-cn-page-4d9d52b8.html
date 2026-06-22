@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>再次遇见 · 炸金花</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            color: #2f2e2a;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #fffcf8;
+            border-radius: 28px;
+            padding: 2.4rem 1.8rem;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 2.4rem;
+            border-bottom: 1px solid #e9e2d9;
+            padding-bottom: 1.6rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 520;
+            letter-spacing: 1px;
+            color: #3b352d;
+        }
+
+        .hero .sub {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #7a7167;
+            border-left: 3px solid #d9cdbc;
+            padding-left: 1rem;
+            background: #f6f0e9;
+            padding: 0.7rem 1rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* 正文排版 */
+        .content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .content h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #3b352d;
+            border-left: 4px solid #bfa88a;
+            padding-left: 0.9rem;
+        }
+
+        .content h3 {
+            font-size: 1.1rem;
+            font-weight: 480;
+            margin: 1.4rem 0 0.5rem 0;
+            color: #4e453b;
+        }
+
+        .highlight-box {
+            background: #f3eee7;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #a58b70;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tip {
+            background: #eae3da;
+            border-radius: 14px;
+            padding: 0.8rem 1.2rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #3a342c;
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+        }
+
+        .tip::before {
+            content: "🕊️";
+            font-size: 1.2rem;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .feature-item {
+            flex: 1 1 160px;
+            background: #f9f5ef;
+            padding: 1rem 1rem 0.9rem;
+            border-radius: 14px;
+            border: 1px solid #ece4da;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 520;
+            color: #3d352b;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item span {
+            font-size: 0.9rem;
+            color: #5f564b;
+        }
+
+        .btn-line {
+            margin: 1.8rem 0 1rem;
+        }
+
+        .btn-line a {
+            display: inline-block;
+            background: #d9cdbc;
+            color: #2b261f;
+            text-decoration: none;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 480;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            border: 1px solid #ccbeab;
+        }
+
+        .btn-line a:hover {
+            background: #ccbeab;
+        }
+
+        .faq {
+            margin: 2rem 0 0.6rem;
+        }
+
+        .faq summary {
+            cursor: pointer;
+            font-weight: 480;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #ddd3c6;
+            color: #3d352b;
+        }
+
+        .faq details {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq details p {
+            margin: 0.4rem 0 0.8rem 0.8rem;
+            font-size: 0.93rem;
+            color: #4f473e;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2d9ce;
+            margin: 2rem 0 1rem;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #8f8579;
+            text-align: center;
+            margin-top: 1.8rem;
+        }
+
+        a {
+            color: #6f5f4d;
+            text-decoration: underline 1px solid #cbbba9;
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: #3b2d1f;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page {
+                padding: 1.6rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <h1>再翻一页 · 炸金花</h1>
+            <div class="sub">收藏夹里常回来看看 · 一款纸牌游戏的产品侧写</div>
+        </div>
+
+        <div class="content">
+            <p>如果你曾经打开过 <a href="https://zh-cn-zhajinhua.com">炸金花</a> 这个站点，或许还记得它那种干净、不打扰的氛围。它没有弹窗广告，也没有强制注册的关卡，更像一个安安静静、为你摆好牌桌的小角落。这篇文章是为那些打算再次回来、或者想把它放进收藏夹的朋友准备的——聊聊它是什么、哪些地方值得注意，以及一些朴素但实在的使用建议。</p>
+
+            <h2>摘要 · 它解决什么问题</h2>
+            <p>简单说，<strong>炸金花</strong>（也叫“诈金花” / “三张牌”）是一款民间纸牌比大小的游戏。规则本身不复杂：每人发三张牌，通过比牌型（豹子、同花顺、金花、顺子、对子、散牌等）决定输赢。但这个站点做的不是“教你规则”，而是提供一个随时可玩的模拟场景——你不需要凑齐三个人，也不需要翻找实体扑克。它把线下游戏的节奏和手感，搬到了一个轻量级的网页里。</p>
+
+            <h2>亮点 · 三个值得留意的细节</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>无账户设计</strong>
+                    <span>打开即玩，没有注册流程，不记录个人身份。适合临时想玩一局、又不想留下数据痕迹的场景。</span>
+                </div>
+                <div class="feature-item">
+                    <strong>牌型参考</strong>
+                    <span>页面内嵌了常见牌型对照，帮助新玩家熟悉大小顺序，减少“我这是不是金花”的困惑。</span>
+                </div>
+                <div class="feature-item">
+                    <strong>节奏自主</strong>
+                    <span>没有倒计时催促，也没有自动托管。每一轮的操作都由你决定，适合慢慢思考或边聊天边玩。</span>
+                </div>
+            </div>
+
+            <h3>使用建议 · 怎么让它更顺手</h3>
+            <div class="highlight-box">
+                <p>▸ 把这页添加到浏览器书签或主屏幕（iOS Safari / Android Chrome 均支持），下次想玩的时候不用重新搜索。</p>
+                <p>▸ 如果你是第一次接触炸金花，建议先花两三分钟熟悉一下牌型等级——网站里有简洁的对照说明，不用去别处查。</p>
+                <p>▸ 网络环境不稳定时，页面依然可以正常游戏（大部分资源已本地化），但首次加载需要联网。</p>
+                <p>▸ 如果长时间未操作，部分浏览器可能进入休眠，刷新后即可继续。</p>
+            </div>
+
+            <div class="tip">
+                <div><strong>一个友善的提示：</strong> 这个站点不涉及真钱、不提供充值渠道、也没有排行榜或社交赌博成分。它就是一个干净的、模拟性质的娱乐工具。请将它视为一种休闲消遣，而非任何形式的投资或盈利途径。</div>
+            </div>
+
+            <h2>再次访问的理由</h2>
+            <p>很多时候我们收藏一个网站，是觉得“以后可能有用”，但最后再也不点开。而 <a href="https://zh-cn-zhajinhua.com">炸金花</a> 属于那种——当你想找一个不占手机内存、不需要登录、拿起就能玩的纸牌游戏时——它永远在那里。它不推更新，不改界面，不会有红点提示。你打开它时，它和上次离开时几乎一样。这种稳定感，在现在的网页里其实很少见了。</p>
+
+            <hr>
+
+            <div class="faq">
+                <h2 style="border-left: none; padding-left: 0; margin-bottom: 0.8rem;">FAQ 摘要</h2>
+
+                <details>
+                    <summary>这个网站需要安装 App 吗？</summary>
+                    <p>不需要。它完全是网页形式，没有对应的手机应用。直接通过浏览器打开即可，也不要求注册。</p>
+                </details>
+
+                <details>
+                    <summary>炸金花和德州扑克有什么区别？</summary>
+                    <p>本质不同。炸金花每人三张牌，比的是固定牌型大小；德州扑克是组合牌 + 公共牌，且有下注轮次。这个站点只做炸金花规则。</p>
+                </details>
+
+                <details>
+                    <summary>可以两个人玩吗？</summary>
+                    <p>目前版本支持最低两人局，适合朋友之间远程口头约定、各自在家操作。也可以单人模拟练习。</p>
+                </details>
+
+                <details>
+                    <summary>页面会收集我的数据吗？</summary>
+                    <p>站点没有用户系统，不设置 cookie 追踪，也不请求个人信息。游戏过程完全在本地浏览器进行。</p>
+                </details>
+            </div>
+
+            <div class="btn-line">
+                <a href="https://zh-cn-zhajinhua.com">炸金花</a>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            —— 保持简单，保持开放。欢迎再次回来。
+        </div>
+    </div>
+</body>
+</html>
